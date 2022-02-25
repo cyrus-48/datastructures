@@ -10,7 +10,7 @@ public class TWAplane {
 		this.cap = cap ;
 		seats = new boolean[cap.length]; // initialize the seat array and set the maximum number to the capacity of the plane.
 	}
-	// method to check the number of seats
+	// method to check all seats
 	public void displaySeats() {
 		System.out.println("-------------------------------------------");
 		System.out.println("seatNo:\t\tname:\t\tstatus:   |");
@@ -62,10 +62,7 @@ public class TWAplane {
 	    			   if(seats[x] == false) {
 	    				   System.out.println("|\t"+x +"\t | \t"+ cap[x]+"	 |");
 	    			   }
-	    			   else {
-	    				   System.out.println("There are no empty seats!!!");
-	    				   
-	    			   }
+	    			 
 	    			 
 	   	    		   }
 	    		          System.out.println("----------------------------------");
@@ -104,10 +101,10 @@ public class TWAplane {
 	public void uncheckSeat(int s) {
 		if(seats[s] == true) {
 			seats[s] = false; 
-			System.out.println("seat no. " + s +" Seat name:"+ cap[s]+" cancelled");
+			System.out.println("seat no. " + s +"\nSeat name:"+ cap[s]+"\nHas been cleared");
 			}
 		else {
-			System.out.println("seat no: "+s+" Seat name:"+ cap[s]+" is already unreserved");
+			System.out.println("seat no: "+s+"\nSeat name:"+ cap[s]+" \nIs already unoccupied");
 		}
 		
 	}
@@ -122,7 +119,7 @@ public class TWAplane {
 			 System.out.println(" ---------------------------");
 			 System.out.println(" |\t   MENU            |");
 			 System.out.println(" --------------------------");
-			 System.out.println(" | 1. |check all seats         |\n | 2. |Reserve seats       | \n | 3. |cancel reservation  | \n | 4. |Check seats status  | \n | 5. |Exit                | ");
+			 System.out.println(" | 1. |check all seats     |\n | 2. |Reserve seats       | \n | 3. |cancel reservation  | \n | 4. |Check seats status  | \n | 5. |Exit                | ");
 			 System.out.println(" --------------------------");
 			 System.out.println("Enter choice:(1-5): ");
 			 ch = sc.nextInt();
