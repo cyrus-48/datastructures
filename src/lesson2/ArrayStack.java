@@ -26,15 +26,17 @@ public class ArrayStack {
 	}
 	// method to add an element to a stack 
 	public void push(int elem) {
-		if(top == arr.length-1) {
-			System.out.println("The stack is full");
-		}
-		else {
-			arr[++top] = elem; // => increaments the value of top and assigns  a new adds a new element
-		System.out.println(elem+" : pushed in the stack! ");	
-		System.out.print("current ");
-		print();
-		}
+	 
+			if(isFull()) {
+				System.out.println("The stack is full");
+			}
+			else {
+				arr[++top] = elem; // => increaments the value of top and assigns  a new adds a new element
+			System.out.println(elem+" : pushed in the stack! ");	
+			System.out.print("current ");
+			print();
+			}
+	 
 		
 	}
 	// method to check whether the stack is empty or not 
@@ -43,6 +45,15 @@ public class ArrayStack {
 			return true;
 		}
 		else { // value of the stack is 0 or greater then the stack is not empty
+			return false;
+		}
+	}
+	//  method to check if the stack  is full
+	public boolean isFull() {
+		if(top + 1== arr.length) {
+			return true;
+		}
+		else {
 			return false;
 		}
 	}
@@ -114,7 +125,9 @@ public class ArrayStack {
 					
 			case 6:
 				print();
+				System.out.println(isFull());
 					break;
+				
 			case 7:
 				System.out.println("exitted");
 				System.exit(0);
