@@ -8,8 +8,8 @@ public class ArrayStack {
 	
 	private int[] arr;
 	private int top; // index of last element to be added to the stack 
-	public ArrayStack(int cap) {
-		arr = new int[cap];
+	public ArrayStack(int MAX) {
+		arr = new int[MAX];
 		top = -1; // position outside the stack => means that the stack is empty
 	}
 	// method to read the first element from the stack
@@ -28,10 +28,11 @@ public class ArrayStack {
 	public void push(int elem) {
 	 
 			if(isFull()) {
-				System.out.println("The stack is full");
+				System.out.println(elem+":Not added !!! The stack is full");
+				
 			}
 			else {
-				arr[++top] = elem; // => increaments the value of top and assigns  a new adds a new element
+				arr[++top] = elem; // => increaments the value of top and adds a new element
 			System.out.println(elem+" : pushed in the stack! ");	
 			System.out.print("current ");
 			print();
@@ -65,7 +66,7 @@ public class ArrayStack {
 		}
 		else return top+1;
 	}
-	// method to remove an element from the stack
+	// method to remove an element from the stack pop()
 	public int  pop() {
 		if(isEmpty()) {
 			System.out.println("Stack is empty");
@@ -94,13 +95,14 @@ public class ArrayStack {
 		
 		
 	}
+	// do while loop to interact with methods from the console...
 	public void menu() {
 	
 		Scanner sc = new Scanner(System.in);
 		int ch  ;
 		do {
 			System.out.println("1. push()\n2. peek()\n3. isEmpty()\n4. pop()\n5. size()\n6. print()\n7. Exit");
-			System.out.println("Enter choice 1-5");
+			System.out.println("Enter choice 1-7");
 			ch = sc.nextInt();
 			switch(ch) {
 			case 1:
@@ -129,7 +131,7 @@ public class ArrayStack {
 					break;
 				
 			case 7:
-				System.out.println("exitted");
+				System.out.println("exit");
 				System.exit(0);
 					break;
 			default:
