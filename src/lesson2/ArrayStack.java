@@ -5,10 +5,11 @@ import java.util.Scanner;
 public class ArrayStack {
 	// stack = > data structure that implements the last in first out protocol. the only accessible object in the  structure 
 	// is the one inserted recently.
-	
+	private int MAX;
 	private int[] arr;
 	private int top; // index of last element to be added to the stack 
 	public ArrayStack(int MAX) {
+		this.MAX =MAX;
 		arr = new int[MAX];
 		top = -1; // position outside the stack => means that the stack is empty
 	}
@@ -25,15 +26,29 @@ public class ArrayStack {
 		
 	}
 	// method to add an element to a stack 
-	public void push(int elem) {
+	public void push() {
+		int elem[];
+		Scanner cc = new Scanner(System.in);
 	 
 			if(isFull()) {
-				System.out.println(elem+":Not added !!! The stack is full");
+				System.out.println(":Not added !!! The stack is full");
 				
 			}
 			else {
-				arr[++top] = elem; // => increaments the value of top and adds a new element
-			System.out.println(elem+" : pushed in the stack! ");	
+				elem = new int[MAX];
+				System.out.println("Enter the elements to be added to the stack:");
+				for(int i= 0;i <= MAX;i++ ) {
+					if(i > MAX-1){
+						System.out.println("The stack is full::");
+					}
+					else {
+						elem[i] = cc.nextInt();
+						
+						arr[++top] = elem[i]; // => increaments the value of top and adds a new element
+						System.out.println(elem[i]+" : pushed in the stack! ");		
+					}	
+				}
+			
 			System.out.print("current ");
 			display();
 			}
@@ -107,10 +122,10 @@ public class ArrayStack {
 			ch = sc.nextInt();
 			switch(ch) {
 			case 1:
-				int elem;
-				System.out.println("Enter element to add to the stack: ");
-				 elem = sc.nextInt();
-				 push(elem);
+				 
+					 push();
+				
+				
 				 	break;
 			case 2:
 				peek();
