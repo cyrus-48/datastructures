@@ -35,7 +35,7 @@ public class ArrayStack {
 				arr[++top] = elem; // => increaments the value of top and adds a new element
 			System.out.println(elem+" : pushed in the stack! ");	
 			System.out.print("current ");
-			print();
+			display();
 			}
 	 
 		
@@ -51,7 +51,7 @@ public class ArrayStack {
 	}
 	//  method to check if the stack  is full
 	public boolean isFull() {
-		if(top + 1== arr.length) {
+		if(top + 1== arr.length) { // full when the length of the array equals the index of the top element  + 1
 			return true;
 		}
 		else {
@@ -60,11 +60,11 @@ public class ArrayStack {
 	}
 	// method to return the size of the stack 
 	public int size() {
-		if(isEmpty()) {
-			System.out.println("Empty!");
+		if(isEmpty()) { // calls the isEmpty method and checks whether its return value True
+			System.out.println("The stack is Empty!");
 			return 0;
 		}
-		else return top+1;
+		else return top+1; // the size of stack is the value of the top plus 1 since indexes start from zero so we add 1.
 	}
 	// method to remove an element from the stack pop()
 	public int  pop() {
@@ -73,17 +73,17 @@ public class ArrayStack {
 			return -1;
 		}
 		else {
-		    int y= arr[top--] ;
+		    int y= arr[top--] ; // define a variable in which the value at the top of the stack is to be assigned. and then decreament the value of the tip by one to move to the next index of the elements. 
 		    System.out.println(y + " removed from the stack!");
 		    System.out.print("Current stack ");
-		    print();
+		    display();
 			return y;
 			}
 	 }
 	// method to print the element in the stack
-	public void print() {
+	public void display() {
 		if(!isEmpty()) {
-			System.out.println("Stack elements: ");
+			System.out.println("Total Stack elements: ");
 			for(int i = top; i > -1 ;i--) {
 				System.out.println( + arr[i] );
 			}
@@ -101,8 +101,9 @@ public class ArrayStack {
 		Scanner sc = new Scanner(System.in);
 		int ch  ;
 		do {
-			System.out.println("1. push()\n2. peek()\n3. isEmpty()\n4. pop()\n5. size()\n6. print()\n7. Exit");
-			System.out.println("Enter choice 1-7");
+			System.out.println("---------------ALL POSSIBLE METHODS IN STACK DATA STRUCTURE---------");
+			System.out.println("1. push()\n2. peek()\n3. isEmpty()\n4. pop()\n5. size()\n6. displaybv()\n7. isFull()\n8. Exit");
+			System.out.println("Enter choice 1-8");
 			ch = sc.nextInt();
 			switch(ch) {
 			case 1:
@@ -118,7 +119,7 @@ public class ArrayStack {
 				System.out.println(	isEmpty());
 					break;
 			case 4:
-				pop();
+	 			pop();
 					break;
 			case 5:
 				
@@ -126,11 +127,14 @@ public class ArrayStack {
 					break;
 					
 			case 6:
-				print();
+				display();
 				System.out.println(isFull());
 					break;
-				
 			case 7:
+				System.out.print("Check whether the stack is full:   ");
+				System.out.println(isFull());
+				break;
+			case 8:
 				System.out.println("exit");
 				System.exit(0);
 					break;
@@ -139,7 +143,7 @@ public class ArrayStack {
 			
 			}
 			
-		}while(ch != 7);
+		}while(ch != 8);
 		}
 	
 

@@ -132,9 +132,18 @@ public class TWAplane {
 					break;
 			 case 2:
 				 System.out.println("--------Reserve seats:------");
-				 System.out.println("Enter seat to be reserved 0-9 " );
-					int s = sc.nextInt();
-					reserveSeats(s);
+				 
+				 try {
+					 System.out.println("Enter seat to be reserved 0-9 " );
+					 int s = sc.nextInt();
+					 reserveSeats(s);
+					 
+				 }catch (Exception e){
+					 System.out.println("SEAT WITH THAT CODE DOES NOT EXIST: enter number between 0-9");
+					 
+				 }
+					
+					
 					 
 					 break;
 			 case 3:
