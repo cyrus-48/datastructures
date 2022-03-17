@@ -13,11 +13,11 @@ public class ArrayQueue {
 		front = 0;
 		rear = 0;
 	}
-	//method to check the sixe of the queue
+	//method to check the size of the queue
 	public int size() {
 		return (max-front + rear) % max;
 	}
-	// m,ethod to chech if the queue is empty
+	// method to check` if the queue is empty
 	public boolean isEmpty() {
 		if(front == rear) {
 			return true;
@@ -78,7 +78,7 @@ public class ArrayQueue {
 		}
 	 
 	}
-	
+	// method to return the the element at the rear of the queue
 	public String rear() {
 		if(isEmpty()) {
 			System.out.println("The stack id emtpy:");
@@ -96,9 +96,9 @@ public class ArrayQueue {
 			System.out.println("The stack is Empty!!");
 			}
 		else {
-			System.out.println("current Elements in the queue: ");
+			System.out.println("\tcurrent Elements in the queue: ");
 			for(int i = rear-1; i >= front;i--) {
-				System.out.println(queue[i]);
+				System.out.println("\t\t"+queue[i]);
 				
 			}
 			
@@ -117,36 +117,45 @@ public class ArrayQueue {
 			switch(ch) {
 			case 1:
 				try {
+					System.out.println("-----------------------------------------");
 				String elem;
 				System.out.println("Enter element to add to the queue: ");
 				 elem = sc.next();
 				 enqueue(elem);
+				 System.out.println("-----------------------------------------");
 				}catch(Exception e) {
 					System.out.println("The queue is full!!");
 				}
 				 	break;
 			case 2:
-				System.out.println("element at the front of the queue: "+front());
+				System.out.println("-------------------------------------------");
+				System.out.println("element at front of the queue: "+front());
 				  rear();
 					break;
 			case 3:
 				System.out.println("check whether the queue is empty: " + isEmpty());
+				System.out.println("-------------------------------------------");
+				
 					break;
 			case 4:
 				dequeue();
 					break;
 			case 5:
-				
+				System.out.println("-----------------------------------------");
 				System.out.println("size of the queue: "+size());
+				System.out.println("-----------------------------------------");
 					break;
 					
 			case 6:
+				System.out.println("-----------------------------------------");
 				display();
-				System.out.println(isFull());
+				System.out.println("-----------------------------------------");
 					break;
 			case 7:
+				System.out.println("-----------------------------------------");
 				System.out.print("Check whether the queue is full: ");
 				System.out.println(isFull());
+				System.out.println("-----------------------------------------");
 				break;
 			case 8:
 				System.out.println("exit");
